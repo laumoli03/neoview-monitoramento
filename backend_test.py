@@ -212,9 +212,9 @@ class NeoViewAPITester:
         print(f"🌐 Testing against: {self.base_url}")
         print("=" * 60)
         
-        # Test 1: Root endpoint
-        if not self.test_root_endpoint():
-            print("❌ Root endpoint failed - API may be down")
+        # Test 1: API health check
+        if not self.test_api_health():
+            print("❌ API health check failed - API may be down")
             return False
         
         # Test 2: Clear existing data for clean testing
