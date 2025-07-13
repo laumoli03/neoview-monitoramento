@@ -346,7 +346,7 @@ function App() {
           <div className="text-sm text-yellow-700 space-y-2">
             <p><strong>1.</strong> Configure seu ESP32 com o nome "NeoView" e UUID do serviço: 12345678-1234-1234-1234-123456789abc</p>
             <p><strong>2.</strong> Characteristic UUID: 87654321-4321-4321-4321-cba987654321</p>
-            <p><strong>3.</strong> Envie dados JSON no formato: {"glucose": 120, "timestamp": "2025-03-15T10:30:00"}</p>
+            <p><strong>3.</strong> Envie dados JSON no formato: {`{"glucose": 120, "timestamp": "2025-03-15T10:30:00"}`}</p>
             <p><strong>4.</strong> Use "Simular Leitura" para testar o sistema antes de conectar o dispositivo real</p>
           </div>
         </div>
