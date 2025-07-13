@@ -32,19 +32,18 @@ class NeoViewAPITester:
             "details": details
         })
 
-    def test_root_endpoint(self):
-        """Test root endpoint"""
+    def test_api_health(self):
+        """Test API health by checking latest endpoint"""
         try:
-            response = requests.get(f"{self.base_url}/")
+            response = requests.get(f"{self.base_url}/api/glucose/latest")
             success = response.status_code == 200
             details = f"Status: {response.status_code}"
             if success:
-                data = response.json()
-                details += f", Message: {data.get('message', 'No message')}"
-            self.log_test("Root Endpoint", success, details)
+                details += ", API is responding"
+            self.log_test("API Health Check", success, details)
             return success
         except Exception as e:
-            self.log_test("Root Endpoint", False, str(e))
+            self.log_test("API Health Check", False, str(e))
             return False
 
     def test_post_glucose_reading(self, glucose_value: float, device_id: str = "Test_ESP32"):
